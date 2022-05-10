@@ -1,0 +1,22 @@
+<h1 mat-dialog-title>Add Ticket</h1>
+<div mat-dialog-content>
+    <form [formGroup]="ticketForm">
+        <mat-form-field appearance="outline">
+            <mat-label>user_id</mat-label>
+            <input formControlName="user_id" matInput placeholder="Enter user_id">
+            </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Ticket_desc</mat-label>
+            <input formControlName="ticket_desc" matInput placeholder="Enter Ticket_desc">
+            </mat-form-field>
+        <mat-form-field appearance="outline">
+            <!-- <mat-label>userName</mat-label> -->
+            <input matInput readonly formControlName="userName"  >
+             
+        </mat-form-field>
+    </form>
+</div>
+<div mat-dialog-action [align]="'end'">
+<button mat-raised-button color="warn" mat-dialog-close>Close</button>
+<button mat-raised-button style="margin-left: 8px;" color="primary" (click)="addTicket()">{{actionBtn}}</button>
+</div>
