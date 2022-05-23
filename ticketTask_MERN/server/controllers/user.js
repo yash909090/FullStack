@@ -6,6 +6,7 @@ import User from '../models/user.js';
 export const signin = async(req, res) => {
 
     const { usrname, password } = req.body;
+    console.log(usrname,password)
 
     try {
         const existingUser = await User.findOne({ usrname });
@@ -35,9 +36,9 @@ export const signup = async(req, res) => {
 
         if(existingUser) return res.status(400).json({ message: "User Already Exists." });
 
-        const hashedPassword = await bcrypt.hash(password, 12);
+        const Password = await bcrypt.hash(password, 12);
 
-        const result = await User.create({usrname, password: hashedPassword, firstName: firstName, lastName: lastName});
+        const result = await User.create({usrname, password: Password, firstName: firstName, lastName: lastName});
 
         const token = jwt.sign({usrname: result.usrname, id: result._id}, 'test', {expiresIn: '1h'});
 
@@ -47,3 +48,4 @@ export const signup = async(req, res) => {
         console.log(error);
     }
 }
+ 

@@ -11,5 +11,5 @@ export const updateTicket = (id, updatedTicket) => API.put(`/tickets/${id}`, upd
 
 export const deleteTicket = (id) => API.post(`/tickets/delete/${id}`)
 
-export const signIn = (formData) => API.post('/user/signin', formData);
-export const signUp = (formData) => API.post('/user/signup', formData);
+export const signIn = (usrname,password) => API.post('/user/signin', {usrname,password});
+export const signUp = (firstname, lastname, usrname, password) => API.post('/user/signup', {firstname, lastname, usrname, password});

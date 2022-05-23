@@ -9,7 +9,7 @@ import EditTicket from './EditTicket';
 
 const columns = [
     {field: '_id', headerName: 'ID', width: '90', hide: true},
-    {field: 'emp_id', headerName: 'Emp_Id', width: '90'},
+    {field: 'emp_id', headerName: 'User_Id', width: '90'},
     {field: 'usrname', headerName: 'User Name', width: '100'},
     {field: 'ticket_desc', headerName: 'ticket_desc', width: '220'},
     {field: 'created_At', headerName: 'Created At', width: '130'},

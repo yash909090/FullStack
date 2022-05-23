@@ -1,23 +1,23 @@
 import * as api from '../api';
 
-export const signin = (formData, navigate) => async(dispatch) => {
+export const signin = (usrname,password, navigate) => async(dispatch) => {
     try {
         
-        const { data } = await api.signIn(formData);
+        const { data } = await api.signIn(usrname,password);
 
         dispatch({type: 'AUTH', payload: data});
 
-        navigate('/Dashboard');
+        navigate('/Dashboard');   
     } catch (error) {
         console.log(error)
         
     }
 }
 
-export const signup = (formData, navigate) => async(dispatch) => {
+export const signup = (firstname, lastname, username, password, navigate) => async(dispatch) => {
     try {
            
-        const { data } = await api.signUp(formData);
+        const { data } = await api.signUp(firstname, lastname, username, password);
 
         dispatch({type: 'AUTH', payload: data});
 
